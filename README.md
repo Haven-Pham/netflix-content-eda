@@ -60,6 +60,14 @@ country after the United States.
 4. **Regional sourcing is a growth lever.** International titles are close to half of the catalogue, and India
    is the second-largest supplier.
 
+## Deliverables
+
+| File | Description |
+|---|---|
+| [`notebooks/netflix_content_eda.ipynb`](notebooks/netflix_content_eda.ipynb) | Complete analysis with outputs |
+| [`reports/Netflix_Catalogue_EDA_Results.xlsx`](reports/Netflix_Catalogue_EDA_Results.xlsx) | Excel workbook: summary sheet with key findings, plus key findings, additions by year, ratings, genres and countries |
+| [`reports/figures/`](reports/figures), [`reports/tables/`](reports/tables) | Charts (PNG) and result tables (CSV) |
+
 ## Repository Structure
 
 ```text
@@ -67,9 +75,10 @@ netflix-content-eda/
 ├── data/                    netflix_titles.csv and data dictionary
 ├── notebooks/               netflix_content_eda.ipynb (analysis with outputs)
 ├── reports/
+│   ├── Netflix_Catalogue_EDA_Results.xlsx  (Excel results workbook)
 │   ├── figures/             nine charts used in the analysis
 │   └── tables/              key findings and country ranking (CSV)
-├── scripts/run_notebook.py  re-executes the notebook
+├── scripts/                 run_notebook.py, build_excel_report.py
 └── requirements.txt
 ```
 
@@ -77,10 +86,11 @@ netflix-content-eda/
 
 ```bash
 pip install -r requirements.txt
-python scripts/run_notebook.py
+python scripts/run_notebook.py        # re-run the analysis, refresh figures and tables
+python scripts/build_excel_report.py  # rebuild the Excel workbook
 ```
 
-The workflow in `.github/workflows/ci.yml` re-runs the notebook on every push.
+The workflow in `.github/workflows/ci.yml` re-runs the notebook and rebuilds the workbook on every push.
 
 ## Data
 
